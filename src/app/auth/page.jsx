@@ -1,13 +1,5 @@
-import AuthLayout from "@/components/auth/AuthLayout";
-import AuthLeftPanel from "@/components/auth/AuthLeftPanel";
-import AuthTabs from "@/components/auth/AuthTabs";
+import AuthLayouti from "@/components/auth/AuthLayout";
 
-export default function AuthPage() {
-  return (
-    <AuthLayout
-      leftContent={<AuthLeftPanel />}
-    >
-      <AuthTabs />
-    </AuthLayout>
-  );
+export default function Page() {
+  return <AuthLayouti />;
 }

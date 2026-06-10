@@ -1,24 +1,52 @@
-export default function AuthLayout({
-  leftContent,
-  children,
-}) {
+"use client";
+
+import { useState } from "react";
+
+import AuthLeftPanel from "./AuthLeftPanel";
+import AuthTabs from "./AuthTabs";
+import SignInForm from "./SignInForm";
+import SignUpForm from "./SignUpForm";
+
+export default function AuthLayouti() {
+  const [activeTab, setActiveTab] = useState("signin");
+
   return (
-    <section className="min-h-screen bg-[#F8F5F0]">
-      <div className="grid min-h-screen lg:grid-cols-2">
+    <div className="flex min-h-[calc(100vh-58px)]">
+      {/* LEFT PANEL */}
+      <AuthLeftPanel />
 
-        {/* Left Side */}
-        <div className="hidden lg:flex">
-          {leftContent}
+      {/* RIGHT PANEL */}
+      <div
+        className="
+        flex-1
+        flex
+        items-center
+        justify-center
+        px-10
+        py-10
+        "
+      >
+        <div className="w-full max-w-[360px]">
+          <AuthTabs
+            activeTab={activeTab}
+            setActiveTab={setActiveTab}
+          />
+
+          {activeTab === "signin" ? (
+            <SignInForm
+              switchToSignup={() =>
+                setActiveTab("signup")
+              }
+            />
+          ) : (
+            <SignUpForm
+              switchToSignin={() =>
+                setActiveTab("signin")
+              }
+            />
+          )}
         </div>
-
-        {/* Right Side */}
-        <div className="flex items-center justify-center p-6 md:p-10">
-          <div className="w-full max-w-lg">
-            {children}
-          </div>
-        </div>
-
       </div>
-    </section>
+    </div>
   );
 }

@@ -1,48 +1,43 @@
 export default function DeliveryForm() {
   return (
     <>
-      <h2 className="font-semibold text-lg mb-6">
+      <h3 className="mb-4 text-[13px] font-medium text-[#2C2016]">
         Delivery Information
-      </h2>
+      </h3>
 
-      <div className="grid md:grid-cols-2 gap-5">
+      <div className="mb-5 grid grid-cols-2 gap-3">
 
-        <Input label="First Name" placeholder="Rahul" />
+        <Field label="First Name" placeholder="Rahul" />
 
-        <Input label="Last Name" placeholder="Khanna" />
+        <Field label="Last Name" placeholder="Khanna" />
 
-        <div className="md:col-span-2">
-          <Input
-            label="Address"
-            placeholder="42, Malviya Nagar"
-          />
+        <div className="col-span-2">
+          <Field label="Address" placeholder="42, Malviya Nagar" />
         </div>
 
-        <Input label="City" placeholder="Jaipur" />
+        <Field label="City" placeholder="Jaipur" />
 
-        <Input label="PIN Code" placeholder="302017" />
+        <Field label="PIN Code" placeholder="302017" />
 
-        <Input label="State" placeholder="Rajasthan" />
+        <Field label="State" placeholder="Rajasthan" />
 
-        <Input
-          label="Phone"
-          placeholder="+91 98765 43210"
-        />
+        <Field label="Phone" placeholder="+91 98765 43210" />
+
       </div>
     </>
   );
 }
 
-function Input({ label, placeholder }) {
+function Field({ label, placeholder }) {
   return (
     <div>
-      <label className="block text-sm mb-2">
+      <label className="mb-1 block text-[11px] text-[#9B8F84]">
         {label}
       </label>
 
       <input
         placeholder={placeholder}
-        className="w-full border rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-black"
+        className="w-full rounded-md border border-[#E4DDD4] bg-white px-3 py-[9px] text-[12px] outline-none focus:border-[#C6A27E]"
       />
     </div>
   );

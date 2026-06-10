@@ -1,46 +1,41 @@
+import { shippingMethods } from "@/data/checkoutData";
+
 export default function ShippingMethod() {
   return (
-    <div className="mt-10">
-
-      <h2 className="font-semibold text-lg mb-5">
+    <>
+      <h3 className="mb-4 text-[13px] font-medium">
         Shipping Method
-      </h2>
+      </h3>
 
-      <div className="space-y-4">
+      {shippingMethods.map((item) => (
+        <div
+          key={item.id}
+          className={`mb-2 flex cursor-pointer items-center gap-3 rounded-lg border p-3 ${
+            item.selected
+              ? "border-[#8B5E3C] bg-[#FFF8F5]"
+              : "border-[#E4DDD4]"
+          }`}
+        >
+          <div
+            className={`h-4 w-4 rounded-full border ${
+              item.selected
+                ? "border-[#8B5E3C]"
+                : "border-[#C6A27E]"
+            }`}
+          />
 
-        <div className="border rounded-2xl p-4 bg-neutral-50 flex justify-between">
-          <div>
-            <h4 className="font-medium">
-              Standard Delivery
-            </h4>
-
-            <p className="text-sm text-neutral-500">
-              5–7 business days + free assembly
-            </p>
+          <div className="flex-1">
+            <div className="text-[12px]">{item.title}</div>
+            <div className="text-[10px] text-[#9B8F84]">
+              {item.subtitle}
+            </div>
           </div>
 
-          <span className="font-semibold">
-            Free
-          </span>
-        </div>
-
-        <div className="border rounded-2xl p-4 flex justify-between">
-          <div>
-            <h4 className="font-medium">
-              Express Delivery
-            </h4>
-
-            <p className="text-sm text-neutral-500">
-              2–3 business days
-            </p>
+          <div className="text-[12px] font-medium">
+            {item.price}
           </div>
-
-          <span className="font-semibold">
-            ₹1,500
-          </span>
         </div>
-
-      </div>
-    </div>
+      ))}
+    </>
   );
 }

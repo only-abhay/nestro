@@ -1,55 +1,32 @@
-"use client";
-
-import { useState } from "react";
-import SignInForm from "./SignInForm";
-import SignUpForm from "./SignUpForm";
-
-export default function AuthTabs() {
-  const [active, setActive] =
-    useState("signin");
-
+export default function AuthTabs({
+  activeTab,
+  setActiveTab,
+}) {
   return (
-    <div className="bg-white border rounded-3xl p-8 w-full max-w-lg">
+    <div className="flex border-b border-[#E4DDD5] mb-6">
 
-      <div className="grid grid-cols-2 bg-neutral-100 rounded-xl p-1 mb-8">
+      <button
+        onClick={() => setActiveTab("signin")}
+        className={`text-[13px] pb-3 mr-6 border-b-2 ${
+          activeTab === "signin"
+            ? "text-[#8B5E3C] border-[#8B5E3C]"
+            : "text-[#8E8781] border-transparent"
+        }`}
+      >
+        Sign in
+      </button>
 
-        <button
-          onClick={() => setActive("signin")}
-          className={`py-3 rounded-lg text-sm ${
-            active === "signin"
-              ? "bg-white shadow"
-              : ""
-          }`}
-        >
-          Sign In
-        </button>
+      <button
+        onClick={() => setActiveTab("signup")}
+        className={`text-[13px] pb-3 border-b-2 ${
+          activeTab === "signup"
+            ? "text-[#8B5E3C] border-[#8B5E3C]"
+            : "text-[#8E8781] border-transparent"
+        }`}
+      >
+        Create account
+      </button>
 
-        <button
-          onClick={() => setActive("signup")}
-          className={`py-3 rounded-lg text-sm ${
-            active === "signup"
-              ? "bg-white shadow"
-              : ""
-          }`}
-        >
-          Create Account
-        </button>
-
-      </div>
-
-      {active === "signin" ? (
-        <SignInForm
-          switchTab={() =>
-            setActive("signup")
-          }
-        />
-      ) : (
-        <SignUpForm
-          switchTab={() =>
-            setActive("signin")
-          }
-        />
-      )}
     </div>
   );
 }

@@ -1,21 +1,24 @@
 import ContactHero from "@/components/contact/ContactHero";
-import ContactInfoCards from "@/components/contact/ContactInfoCards";
-import ContactForm from "@/components/contact/ContactForm";
+import ContactInfoItem from "@/components/contact/ContactInfoItem";
+import ContactInfoCard from "@/components/contact/ContactInfoCards";
+import MapPlaceholder from "@/components/contact/MapPlaceholder";
 import ShowroomSection from "@/components/contact/ShowroomSection";
-import ContactMap from "@/components/contact/ContactMap";
-import FAQSection from "@/components/contact/FAQSection";
-import ConsultationCTA from "@/components/contact/ConsultationCTA";
+import ContactForm from "@/components/contact/ContactForm";
 
 export default function ContactPage() {
   return (
-    <>
+    <main>
       <ContactHero />
-      <ContactInfoCards />
-      <ContactForm />
-      <ShowroomSection />
-      <ContactMap />
-      <FAQSection />
-      <ConsultationCTA />
-    </>
+
+      <div className="px-6 pb-6 grid grid-cols-[1fr_1.4fr] gap-6">
+        <div>
+          <ContactInfoCard />
+          <MapPlaceholder />
+          <ShowroomSection />
+        </div>
+
+        <ContactForm />
+      </div>
+    </main>
   );
 }

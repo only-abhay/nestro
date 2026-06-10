@@ -1,22 +1,21 @@
 export default function PromoCode() {
   return (
-    <div className="bg-white border rounded-2xl p-4">
-      <div className="flex gap-3">
-
+    <>
+      <div className="flex gap-2 mb-4">
         <input
           defaultValue="Nestro15"
-          className="flex-1 border rounded-xl px-4 py-3"
+          placeholder="Promo / gift code"
+          className="flex-1 px-3 py-[9px] text-xs border border-[#E4DDD5] rounded-md bg-white outline-none"
         />
 
-        <button className="px-5 bg-black text-white rounded-xl">
+        <button className="bg-[#1F1A17] text-[#C6A27E] text-[11px] px-4 rounded-md">
           Apply
         </button>
-
       </div>
 
-      <div className="mt-4 text-green-700 text-sm">
-        ✓ Code applied. You save ₹25,650
+      <div className="bg-[#EAF3DE] rounded-lg px-[14px] py-3 flex items-center gap-2 text-[11px] text-[#3B6D11]">
+        ✓ Code applied. You save ₹25,650!
       </div>
-    </div>
+    </>
   );
 }

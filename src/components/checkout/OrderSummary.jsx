@@ -1,78 +1,64 @@
+import { Sofa, Table2 } from "lucide-react";
+import OrderItem from "./OrderItem";
+
 export default function OrderSummary() {
   return (
-    <div className="bg-white border rounded-3xl p-6 sticky top-24">
-
-      <h2 className="font-semibold text-lg mb-6">
+    <div className="bg-white border border-[#E4DDD5] rounded-xl p-5 mb-4">
+      
+      <h3 className="text-sm font-medium text-[#2F2A27] border-b border-[#E4DDD5] pb-3 mb-[14px]">
         Order Summary
-      </h2>
+      </h3>
 
-      <div className="space-y-4">
+      <OrderItem
+        icon={<Sofa size={22} className="text-[#C6A27E]" />}
+        qty={1}
+        name="Ember Velvet 3-Seater"
+        variant="Walnut Brown · 3-Seater"
+        price="₹89,000"
+      />
 
-        <Item
-          name="Ember Velvet 3-Seater"
-          variant="Walnut Brown · 3-Seater"
-          price="₹89,000"
-        />
+      <OrderItem
+        icon={<Table2 size={22} className="text-[#C6A27E]" />}
+        qty={2}
+        name="Travertine Side Table"
+        variant="Ivory · Standard"
+        price="₹56,000"
+      />
 
-        <Item
-          name="Travertine Side Table"
-          variant="Ivory · Standard"
-          price="₹56,000"
-        />
+      <div className="border-t border-[#E4DDD5] pt-[14px] mt-[14px]">
 
-      </div>
+        <div className="flex justify-between text-xs text-[#5F5853] mb-2">
+          <span>Subtotal</span>
+          <span>₹1,45,000</span>
+        </div>
 
-      <div className="border-t mt-6 pt-6 space-y-3">
+        <div className="flex justify-between text-xs text-[#5F5853] mb-2">
+          <span>Delivery</span>
+          <span className="text-[#3B6D11]">
+            Free
+          </span>
+        </div>
 
-        <Row label="Subtotal" value="₹1,45,000" />
+        <div className="flex justify-between text-xs text-[#5F5853] mb-2">
+          <span>Assembly</span>
+          <span className="text-[#3B6D11]">
+            Free
+          </span>
+        </div>
 
-        <Row
-          label="Delivery"
-          value="Free"
-        />
+        <div className="flex justify-between text-xs text-[#5F5853] mb-2">
+          <span>Discount (Nestro15)</span>
+          <span className="text-[#3B6D11]">
+            -₹25,650
+          </span>
+        </div>
 
-        <Row
-          label="Assembly"
-          value="Free"
-        />
-
-        <Row
-          label="Discount"
-          value="-₹25,650"
-        />
-
-        <div className="flex justify-between font-bold text-lg pt-3">
+        <div className="flex justify-between text-[14px] font-medium text-[#2F2A27] border-t border-[#E4DDD5] pt-3 mt-1">
           <span>Total</span>
           <span>₹1,19,350</span>
         </div>
 
       </div>
-
-    </div>
-  );
-}
-
-function Item({ name, variant, price }) {
-  return (
-    <div className="flex justify-between">
-      <div>
-        <h4 className="font-medium">{name}</h4>
-
-        <p className="text-sm text-neutral-500">
-          {variant}
-        </p>
-      </div>
-
-      <span>{price}</span>
-    </div>
-  );
-}
-
-function Row({ label, value }) {
-  return (
-    <div className="flex justify-between text-sm">
-      <span>{label}</span>
-      <span>{value}</span>
     </div>
   );
 }
