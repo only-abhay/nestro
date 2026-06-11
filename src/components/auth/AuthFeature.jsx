@@ -3,19 +3,27 @@ export default function AuthFeature({
   text,
 }) {
   return (
-    <div className="flex gap-[10px] items-center mb-[14px] w-full max-w-[240px]">
-
-      <div className="w-7 h-7 bg-[#C6A27E26] rounded-md flex items-center justify-center">
+    <div className="flex items-center gap-[10px] mb-[14px] w-full max-w-[240px]">
+      <div
+        className="
+          w-7
+          h-7
+          rounded-[6px]
+          bg-[rgba(198,162,126,0.15)]
+          flex
+          items-center
+          justify-center
+        "
+      >
         <Icon
           size={14}
           className="text-[#C6A27E]"
         />
       </div>
 
-      <p className="text-[11px] text-white/55 leading-[1.5]">
+      <p className="text-[11px] leading-[1.5] text-white/55">
         {text}
       </p>
-
     </div>
   );
 }

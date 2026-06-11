@@ -2,6 +2,7 @@
 
 import { Eye, Apple } from "lucide-react";
 import { FcGoogle } from "react-icons/fc";
+import Link from "next/link";
 
 import SocialButton from "./SocialButton";
 import AuthTerms from "./AuthTerms";
@@ -79,6 +80,8 @@ export default function SignInForm({
         Forgot password?
       </div>
 
+<Link href="/profile"  >
+
       <button
         className="
         w-full
@@ -93,6 +96,7 @@ export default function SignInForm({
       >
         Sign In
       </button>
+</Link>
 
       <div className="flex items-center gap-2 mb-4">
         <div className="flex-1 h-px bg-[#E5DDD5]" />

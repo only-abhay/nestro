@@ -69,7 +69,7 @@ export default function Header() {
           </button>
 
           <Link
-            href="/account"
+            href="/profile"
             className="hidden sm:flex h-8 w-8 items-center justify-center rounded-full border border-[#C6A27E] bg-[#F0EBE3] text-[#8B5E3C] transition hover:bg-[#C6A27E] hover:text-white"
           >
             <User size={16} />
@@ -108,7 +108,7 @@ export default function Header() {
           ))}
 
           <Link
-            href="/account"
+            href="/profile"
             className="mt-2 block rounded-md px-4 py-3 text-sm text-[#6B7280]"
           >
             My Account

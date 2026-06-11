@@ -8,22 +8,21 @@ import SignInForm from "./SignInForm";
 import SignUpForm from "./SignUpForm";
 
 export default function AuthLayouti() {
-  const [activeTab, setActiveTab] = useState("signin");
+  const [activeTab, setActiveTab] =
+    useState("signin");
 
   return (
     <div className="flex min-h-[calc(100vh-58px)]">
-      {/* LEFT PANEL */}
       <AuthLeftPanel />
 
-      {/* RIGHT PANEL */}
       <div
         className="
-        flex-1
-        flex
-        items-center
-        justify-center
-        px-10
-        py-10
+          flex-1
+          flex
+          justify-center
+          items-center
+          px-10
+          py-10
         "
       >
         <div className="w-full max-w-[360px]">

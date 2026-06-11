@@ -1,4 +1,5 @@
 "use client";
+import AuthIllustration from "../auth/AuthIllustration";
 
 import { ArrowRight } from "lucide-react";
 
@@ -36,11 +37,9 @@ export default function Hero() {
         </div>
 
         <div>
-          <img
-            src="/images/hero-sofa.png"
-            alt="Furniture"
-            className="w-full object-contain"
-          />
+          <div className=" flex justify-center  mb-8">
+                  <AuthIllustration  />
+                </div>
         </div>
 
       </div>
