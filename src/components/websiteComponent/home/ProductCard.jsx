@@ -1,0 +1,109 @@
+import Link from "next/link";
+
+export default function ProductCard({ product }) {
+  return (
+    <Link
+      href={`/products/${product.id}`}
+      className="
+      group
+      transition-all
+      hover:translate-[-3px]
+      border-[#e8e0d5]
+      border-[0.5px]
+      bg-white
+      rounded-xl
+      overflow-hidden
+      block
+      w-full
+      "
+    >
+      <div
+        className="
+        h-24
+        sm:h-20
+        bg-[#f5f5f5]
+        relative
+        "
+      >
+        {product.badge && (
+          <span
+            className="
+            absolute
+            top-3
+            right-3
+            bg-black
+            text-white
+            text-[10px]
+            sm:text-xs
+            px-2.5
+            sm:px-3
+            py-1
+            rounded-full
+            "
+          >
+            {product.badge}
+          </span>
+        )}
+      </div>
+
+      <div
+        className="
+        p-4
+        sm:p-5
+        "
+      >
+        <p
+          className="
+          text-xs
+          sm:text-sm
+          text-zinc-500
+          "
+        >
+          {product.category}
+        </p>
+
+        <h3
+          className="
+          font-medium
+          mt-1
+          text-sm
+          sm:text-base
+          "
+        >
+          {product.name}
+        </h3>
+
+        <div
+          className="
+          flex
+          justify-between
+          items-center
+          mt-4
+          gap-2
+          "
+        >
+          <span
+            className="
+            text-xs
+            sm:text-sm
+            whitespace-nowrap
+            "
+          >
+            {"★".repeat(product.rating)}
+          </span>
+
+          <span
+            className="
+            font-semibold
+            text-sm
+            sm:text-base
+            whitespace-nowrap
+            "
+          >
+            {product.price}
+          </span>
+        </div>
+      </div>
+    </Link>
+  );
+}
