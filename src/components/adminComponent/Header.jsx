@@ -1,74 +1,130 @@
 "use client";
 
-import { Bell, Menu, Search, ChevronDown } from "lucide-react";
+import {
+  Menu,
+  Search,
+  Moon,
+  ShoppingCart,
+  Bell,
+  ScanLine,
+  Settings,
+} from "lucide-react";
 
-export default function Header({ title = "Dashboard" }) {
+export default function Header() {
   return (
-    <header className="sticky top-0 z-40 h-16 bg-white border-b border-gray-200 px-6 flex items-center justify-between">
-      {/* Left */}
-      <div className="flex items-center gap-4">
-        <button className="lg:hidden">
-          <Menu size={24} />
-        </button>
+    <header className="h-[88px] sticky top-0 bg-[#F5F5F5] border-b border-[#E5E7EB] flex justify-between">
 
-        <div>
-          <h1 className="text-xl font-bold text-gray-900">
-            {title}
-          </h1>
-          <p className="text-xs text-gray-500">
-            Welcome back, Admin 👋
-          </p>
+      {/* Left Section */}
+      <div className="flex items-center flex-1">
+
+        <div className="ml-7">
+          <div className="relative">
+            <input
+              type="text"
+              placeholder="Search for Results..."
+              className="
+                w-[480px]
+                h-[52px]
+                rounded-xl
+                bg-white
+                border
+                border-[#E7E7E7]
+                pl-5
+                pr-12
+                outline-none
+                text-slate-600
+                placeholder:text-slate-400
+              "
+            />
+
+            <Search
+              size={20}
+              className="
+                absolute
+                right-5
+                top-1/2
+                -translate-y-1/2
+                text-slate-400
+              "
+            />
+          </div>
         </div>
       </div>
 
-      {/* Center Search */}
-      <div className="hidden md:flex flex-1 max-w-xl mx-8">
-        <div className="relative w-full">
-          <Search
-            size={18}
-            className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"
-          />
+      {/* Right Section */}
+      <div className="flex">
 
-          <input
-            type="text"
-            placeholder="Search..."
-            className="w-full pl-11 pr-4 py-2.5 rounded-xl border border-gray-200 bg-gray-50 outline-none focus:border-blue-500 focus:bg-white transition"
-          />
+        {/* Trash */}
+        <div className="w-[72px]   flex items-center justify-center">
+          <span className="text-xl text-slate-500">🗑️</span>
         </div>
-      </div>
 
-      {/* Right */}
-      <div className="flex items-center gap-4">
+        {/* Dark Mode */}
+        <div className="w-[72px]  flex items-center justify-center">
+          <Moon size={20} className="text-slate-500" />
+        </div>
+
+        {/* Cart */}
+        <div className="w-[72px] flex items-center justify-center relative">
+          <ShoppingCart size={20} className="text-slate-500" />
+
+          <span
+            className="
+              absolute
+              top-5
+              right-5
+              w-5
+              h-5
+              rounded-full
+              bg-green-500
+              text-white
+              text-[10px]
+              font-semibold
+              flex
+              items-center
+              justify-center
+            "
+          >
+            5
+          </span>
+        </div>
+
         {/* Notification */}
-        <button className="relative h-11 w-11 rounded-xl border border-gray-200 flex items-center justify-center hover:bg-gray-50 transition">
-          <Bell size={20} />
+        <div className="w-[72px] flex items-center justify-center relative">
+          <Bell size={20} className="text-slate-500" />
 
-          <span className="absolute top-2 right-2 h-2 w-2 rounded-full bg-red-500" />
-        </button>
+          <span
+            className="
+              absolute
+              top-6
+              right-6
+              w-2.5
+              h-2.5
+              rounded-full
+              bg-pink-500
+            "
+          />
+        </div>
+
+        {/* Fullscreen */}
+        <div className="w-[72px]   flex items-center justify-center">
+          <ScanLine size={20} className="text-slate-500" />
+        </div>
 
         {/* Profile */}
-        <button className="flex items-center gap-3 rounded-xl border border-gray-200 px-3 py-2 hover:bg-gray-50 transition">
+        <div className="w-[72px]  flex items-center justify-center">
           <img
             src="https://i.pravatar.cc/100"
-            alt="Admin"
-            className="h-10 w-10 rounded-full object-cover"
+            alt="profile"
+            className="w-10 h-10 rounded-md object-cover"
           />
+        </div>
 
-          <div className="hidden md:block text-left">
-            <p className="text-sm font-semibold text-gray-900">
-              Abhay Shaw
-            </p>
+        {/* Settings */}
+        <div className="w-[72px] flex items-center justify-center">
+          <Settings size={20} className="text-slate-500" />
+        </div>
 
-            <p className="text-xs text-gray-500">
-              Super Admin
-            </p>
-          </div>
-
-          <ChevronDown
-            size={18}
-            className="hidden md:block text-gray-500"
-          />
-        </button>
       </div>
     </header>
   );
